@@ -1,6 +1,6 @@
 name: ump_consent_status
 description: "Return status of which type of consent user has selected"
-version: 0.0.1
+version: 0.0.2
 homepage:
 
 environment:
