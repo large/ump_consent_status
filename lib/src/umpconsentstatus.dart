@@ -103,14 +103,15 @@ class UmpConsentStatus {
 
   /// Returns the previous consent status (has user given consent)
   Future<ConsentStatus> getPreviousConsentStatus() async {
-    int consentStatus = await asyncPrefs.getInt("consent_status") ?? 0;
+    //iOS (and probably macOS) has this variable as ump_status
+    int consentStatus = await asyncPrefs.getInt("ump_status") ?? 0;
 
     /// SharedPreferences for Android is "locked" into a spesific xml-file
     /// I have asked a question regarding this to the flutter-team:
     /// https://github.com/flutter/flutter/issues/153300
     /// Meanwhile my android "hack" plugin needs to be used
     //In Android the file is called __GOOGLE_FUNDING_CHOICE_SDK_INTERNAL__.xml
-    //Therefore we need to force reading from there
+    //Therefore we need to force reading from there, and it is called "consent_status"
     if (Platform.isAndroid) {
       Getdefaultsharedpreferences androidSharedPrefs =
       Getdefaultsharedpreferences();
