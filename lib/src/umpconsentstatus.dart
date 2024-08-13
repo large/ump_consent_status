@@ -122,9 +122,9 @@ class UmpConsentStatus {
 
     switch (consentStatus) {
       case 1:
-        return ConsentStatus.unknown;
-      case 2:
         return ConsentStatus.notRequired;
+      case 2:
+        return ConsentStatus.required;
       case 3:
         return ConsentStatus.obtained;
       default:

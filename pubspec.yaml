@@ -1,7 +1,7 @@
 name: ump_consent_status
 description: "Return status of which type of consent user has selected"
-version: 0.0.2
-homepage:
+version: 0.0.3
+homepage: https://github.com/large/ump_consent_status/blob/master/README.md
 
 environment:
   sdk: ^3.5.0
